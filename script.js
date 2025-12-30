@@ -2,6 +2,34 @@ document.addEventListener("DOMContentLoaded", () => {
     // Dynamic Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
+    // Theme Toggle
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = themeToggle.querySelector("i");
+    const savedTheme = localStorage.getItem("theme");
+
+    // Apply saved theme or default to dark
+    if (savedTheme === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+    }
+
+    themeToggle.addEventListener("click", () => {
+        const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+        if (currentTheme === "light") {
+            document.documentElement.removeAttribute("data-theme");
+            localStorage.setItem("theme", "dark");
+            themeIcon.classList.remove("fa-sun");
+            themeIcon.classList.add("fa-moon");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+            localStorage.setItem("theme", "light");
+            themeIcon.classList.remove("fa-moon");
+            themeIcon.classList.add("fa-sun");
+        }
+    });
+
     // Scroll Effect for Navbar
     const navbar = document.querySelector(".navbar");
     window.addEventListener("scroll", () => {

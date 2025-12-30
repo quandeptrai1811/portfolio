@@ -1,5 +1,6 @@
 /* Base Variables */
 :root {
+    /* Dark Theme (Default) */
     --bg-color: #0f172a;
     --card-bg: rgba(30, 41, 59, 0.7);
     --text-primary: #f8fafc;
@@ -8,6 +9,7 @@
     --accent-glow: rgba(56, 189, 248, 0.5);
     --gradient-1: #38bdf8;
     --gradient-2: #818cf8;
+    --nav-bg: rgba(15, 23, 42, 0.9);
 
     --font-heading: "Outfit", sans-serif;
     --font-body: "Plus Jakarta Sans", sans-serif;
@@ -15,6 +17,18 @@
     --container-padding: 2rem;
     --border-radius: 16px;
     --transition-speed: 0.3s;
+}
+
+[data-theme="light"] {
+    --bg-color: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-color: #0284c7;
+    --accent-glow: rgba(2, 132, 199, 0.3);
+    --gradient-1: #0ea5e9;
+    --gradient-2: #6366f1;
+    --nav-bg: rgba(255, 255, 255, 0.9);
 }
 
 /* Reset & Scaffolding */
@@ -131,6 +145,18 @@ ul {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
+[data-theme="light"] .glass-card {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05),
+        0 2px 4px -1px rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .glass-card:hover {
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
 .btn {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -202,7 +228,7 @@ ul {
 }
 
 .navbar.scrolled {
-    background: rgba(15, 23, 42, 0.9);
+    background: var(--nav-bg);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -256,6 +282,25 @@ ul {
     height: 3px;
     background-color: var(--text-primary);
     border-radius: 2px;
+}
+
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: var(--transition-speed);
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    color: var(--accent-color);
+    transform: rotate(15deg);
 }
 
 /* Hero Section */
@@ -398,6 +443,11 @@ ul {
     color: var(--text-primary);
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: var(--transition-speed);
+}
+
+[data-theme="light"] .tags span {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .tags span:hover {
