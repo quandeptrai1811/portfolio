@@ -105,4 +105,51 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     `;
     document.head.appendChild(styleSheet);
+
+    // Carousel Logic
+    const carouselItems = document.querySelectorAll(".carousel-item");
+    const prevBtn = document.querySelector(".carousel-control.prev");
+    const nextBtn = document.querySelector(".carousel-control.next");
+    let currentSlide = 0;
+    const slideIntervalTime = 5000;
+    let slideInterval;
+
+    function showSlide(index) {
+        carouselItems.forEach((item) => item.classList.remove("active"));
+        if (index >= carouselItems.length) currentSlide = 0;
+        else if (index < 0) currentSlide = carouselItems.length - 1;
+        else currentSlide = index;
+        carouselItems[currentSlide].classList.add("active");
+    }
+
+    function nextSlide() {
+        showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlide - 1);
+    }
+
+    if (carouselItems.length > 0) {
+        nextBtn.addEventListener("click", () => {
+            nextSlide();
+            resetInterval();
+        });
+
+        prevBtn.addEventListener("click", () => {
+            prevSlide();
+            resetInterval();
+        });
+
+        function startInterval() {
+            slideInterval = setInterval(nextSlide, slideIntervalTime);
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            startInterval();
+        }
+
+        startInterval();
+    }
 });

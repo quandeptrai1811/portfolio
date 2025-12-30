@@ -317,6 +317,37 @@ ul {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    gap: 2rem;
+}
+
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+}
+
+.hero-avatar {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 30px var(--accent-glow);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 .hero-text {
@@ -346,6 +377,7 @@ ul {
         var(--gradient-2)
     );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -577,7 +609,76 @@ ul {
     border-radius: 100px;
 }
 
-/* Contact Section & Footer */
+/* Carousel */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
 .contact-content {
     text-align: center;
     max-width: 600px;
@@ -620,6 +721,37 @@ footer {
     font-size: 0.9rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     margin-top: 3rem;
+}
+
+/* University Link */
+.university-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.university-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* Project Link */
+.project-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.project-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -673,5 +805,29 @@ footer {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .hero-image-container {
+        margin-bottom: 2rem;
+        order: 1; /* Image on top on mobile */
+    }
+
+    .hero-text {
+        order: 2;
+    }
+
+    .hero-avatar {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
     }
 }

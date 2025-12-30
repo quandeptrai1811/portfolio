@@ -84,6 +84,13 @@
         <main>
             <section id="home" class="hero-section">
                 <div class="container hero-content">
+                    <div class="hero-image-container">
+                        <img
+                            src="images/avatar.jpg"
+                            alt="Minh Quân"
+                            class="hero-avatar"
+                        />
+                    </div>
                     <div class="hero-text">
                         <span class="hero-subtitle">Hello, I'm</span>
                         <h1 class="hero-title">
@@ -151,7 +158,14 @@
                                 </div>
                                 <div class="info-item">
                                     <i class="fas fa-graduation-cap"></i>
-                                    University of Information Technology - UIT
+                                    <a
+                                        href="https://www.google.com/maps/search/?api=1&query=University+of+Information+Technology+VNUHCM"
+                                        target="_blank"
+                                        class="university-link"
+                                    >
+                                        University of Information Technology -
+                                        UIT
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -166,23 +180,23 @@
                         <div class="skill-category glass-card">
                             <h3><i class="fas fa-code"></i> Languages</h3>
                             <div class="tags">
-                                <span>Java (3y)</span>
-                                <span>JavaScript (3y)</span>
-                                <span>TypeScript (3y)</span>
-                                <span>SQL (4y)</span>
+                                <span>Java</span>
+                                <span>JavaScript</span>
+                                <span>TypeScript</span>
+                                <span>SQL</span>
                                 <span>HTML/CSS</span>
                             </div>
                         </div>
                         <div class="skill-category glass-card">
                             <h3>
-                                <i class="fas fa-server"></i> Backend &
-                                Frameworks
+                                <i class="fas fa-server"></i> Backend & Frontend
                             </h3>
                             <div class="tags">
-                                <span>NodeJS (3y)</span>
-                                <span>Nest.js (2y)</span>
-                                <span>NextJS (1y)</span>
-                                <span>Microservices (1y)</span>
+                                <span>NodeJS</span>
+                                <span>Nest.js</span>
+                                <span>NextJS</span>
+                                <span>ReactJS</span>
+                                <span>Microservices</span>
                                 <span>Kafka</span>
                                 <span>WebSocket</span>
                             </div>
@@ -193,17 +207,16 @@
                                 DevOps
                             </h3>
                             <div class="tags">
-                                <span>PostgreSQL (4y)</span>
-                                <span>CI/CD (1y)</span>
+                                <span>PostgreSQL</span>
+                                <span>CI/CD</span>
                                 <span>Docker</span>
-                                <span>Git (4y)</span>
+                                <span>Git</span>
                             </div>
                         </div>
                         <div class="skill-category glass-card">
                             <h3><i class="fas fa-mobile-alt"></i> Other</h3>
                             <div class="tags">
-                                <span>ReactJS</span>
-                                <span>Flutter (2y)</span>
+                                <span>Flutter</span>
                                 <span>Agile/Scrum</span>
                             </div>
                         </div>
@@ -346,8 +359,34 @@
                 <div class="container">
                     <h2 class="section-title">Highlight Project</h2>
                     <div class="project-card glass-card">
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img
+                                        src="images/danharGlamping/home.png"
+                                        alt="Danhar Glamping"
+                                    />
+                                </div>
+                                <div class="carousel-item">
+                                    <img
+                                        src="images/danharGlamping/booking.png"
+                                        alt="Danhar Glamping booking"
+                                    />
+                                </div>
+                            </div>
+                            <button class="carousel-control prev">❮</button>
+                            <button class="carousel-control next">❯</button>
+                        </div>
                         <div class="project-info">
-                            <h3>DanharGlamping</h3>
+                            <h3>
+                                <a
+                                    href="https://www.danharglamping.com/"
+                                    target="_blank"
+                                    class="project-link"
+                                >
+                                    DanharGlamping
+                                </a>
+                            </h3>
                             <p class="role-date">
                                 12/2023 - 10/2024 | Team size: 3
                             </p>
